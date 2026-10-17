@@ -1,0 +1,13 @@
+{
+  "info": {"name": "DevFolio API", "_postman_id": "devfolio-api", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [{"key": "base", "value": "http://127.0.0.1:8000/api"}, {"key": "slug", "value": "building-reliable-apis-with-django"}],
+  "item": [
+    {"name": "Login", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\"username\":\"owner\",\"password\":\"pass12345\"}"}, "url": "{{base}}/auth/login/"}},
+    {"name": "Public posts", "request": {"method": "GET", "url": "{{base}}/posts/"}},
+    {"name": "Post detail", "request": {"method": "GET", "url": "{{base}}/posts/{{slug}}/"}},
+    {"name": "Like toggle", "request": {"method": "POST", "header": [{"key": "X-Visitor-Id", "value": "demo-visitor"}], "url": "{{base}}/posts/{{slug}}/like/"}},
+    {"name": "Comments", "request": {"method": "GET", "url": "{{base}}/posts/{{slug}}/comments/"}},
+    {"name": "Contact", "request": {"method": "POST", "body": {"mode": "raw", "raw": "{\"name\":\"Visitor\",\"email\":\"visitor@example.com\",\"subject\":\"Hello\",\"message\":\"I would like to connect with you.\"}"}, "url": "{{base}}/contact/"}},
+    {"name": "Dashboard", "request": {"method": "GET", "url": "{{base}}/dashboard/stats/"}}
+  ]
+}
